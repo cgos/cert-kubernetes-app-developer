@@ -1,0 +1,1 @@
+Notes and snippets for the Certified Kubernetes Application Developer courses
