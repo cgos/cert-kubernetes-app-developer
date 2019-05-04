@@ -1,6 +1,9 @@
 Notes and snippets for the Certified Kubernetes Application Developer courses
 
 # Core Concepts
+
+## Kubernetes primitives
+
 K8s objects are building block of all running k8s application. [See understanding kubernetes objects](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/)
 
 | K8s Object                        | Command                                                                                          |
@@ -23,7 +26,7 @@ K8s objects are building block of all running k8s application. [See understandin
 | Delete pod                           | kubectl delete pod my-pod                              |
 | Get pods from namespace              | kubectl get pods -n my-ns                              |
 | Execute a command within a container | kubectl exec my-configmap-volume-pod -- ls /etc/config |
-|                                      |                                                        |
+| See logs from pod                    | kubectl logs my-configmap-pod                          |
 
 ## Namespace
 
@@ -36,7 +39,7 @@ K8s objects are building block of all running k8s application. [See understandin
 
 ## Basic Container Configuration
 
-[See define a comamnd and args for a container](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/)
+[See define a command and args for a container](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/)
 
 
 | Container                     | Command                                                                                 |
@@ -44,6 +47,42 @@ K8s objects are building block of all running k8s application. [See understandin
 | Expose container on port 8000 | kubectl expose deployment http --external-ip="172.17.0.16" --port=8000 --target-port=80 |
 | Scale the http deployment     | kubectl scale --replicas=3 deployment http                                              |
 
-# Configuration
+# ConfigMaps
 
 [See configure a pod to use a ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)
+
+## SecurityContext
+
+[See configure a security context for a pod or container](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
+
+## Resouce Requirements
+## Secrets
+## ServiceAccounts
+
+# Multi-Container Pods
+
+# Observability
+## Liveness and Readiness Probes
+## Container Logging
+## Installing Metrics Server
+## Monitoring Applications
+## Debugging
+
+# Pod Design
+## Labels, Selectors and Annotations
+## Deployments
+## Rolling Updates and Rollbacks
+## Jobs and CronJobs
+
+
+# Services and Networking
+## Services
+## NetworkPolicies
+
+# State Persistence
+## Volumes
+## PersistenceVolumes and PersistentVolumeClaims
+
+# Practice Exam
+
+# Wrap-up
