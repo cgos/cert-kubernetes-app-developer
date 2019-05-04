@@ -56,7 +56,13 @@ K8s objects are building block of all running k8s application. [See understandin
 [See configure a security context for a pod or container](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)
 
 ## Resouce Requirements
+
+[See Resource requests and limits of Pod and Container](https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/#resource-requests-and-limits-of-pod-and-container)
+
 ## Secrets
+
+[See Secrets reference](https://kubernetes.io/docs/concepts/configuration/secret/)
+
 ## ServiceAccounts
 
 # Multi-Container Pods
