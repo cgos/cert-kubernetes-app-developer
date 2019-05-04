@@ -67,6 +67,7 @@ K8s objects are building block of all running k8s application. [See understandin
 ## ServiceAccounts
 
 [See managing service accounts](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/)
+
 [See configuring service accounts for pods](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/)
 
 
