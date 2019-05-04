@@ -24,3 +24,26 @@ K8s objects are building block of all running k8s application. [See understandin
 | Get pods from namespace              | kubectl get pods -n my-ns                              |
 | Execute a command within a container | kubectl exec my-configmap-volume-pod -- ls /etc/config |
 |                                      |                                                        |
+
+## Namespace
+
+[See namespace overview](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/)
+
+| Namespace         | Command                 |
+|-------------------|-------------------------|
+| Get Namespaces    | kubectl get namespaces  |
+| Create Namespaces | kubectl create ns my-ns |
+
+## Basic Container Configuration
+
+[See define a comamnd and args for a container](https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/)
+
+
+| Container                     | Command                                                                                 |
+|-------------------------------|-----------------------------------------------------------------------------------------|
+| Expose container on port 8000 | kubectl expose deployment http --external-ip="172.17.0.16" --port=8000 --target-port=80 |
+| Scale the http deployment     | kubectl scale --replicas=3 deployment http                                              |
+
+# Configuration
+
+[See configure a pod to use a ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/)
