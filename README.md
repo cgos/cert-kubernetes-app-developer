@@ -6,12 +6,13 @@ Notes and snippets for the Certified Kubernetes Application Developer courses
 
 K8s objects are building block of all running k8s application. [See understanding kubernetes objects](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/)
 
-| K8s Object                        | Command                                                                                          |
-|-----------------------------------|--------------------------------------------------------------------------------------------------|
-| List all k8s objects              | kubectl api-resources -o name                                                                    |
-| List system pods                  | kubectl get pods -n kube-system                                                                  |
-| Overview of an objectCluster info | kubectl cluster-info dump                                                                        |
-| View the nodes in the cluster     | kubectl get nodes                                                                                |
+| K8s Object                        | Command                                           |
+|-----------------------------------|---------------------------------------------------|
+| List all k8s objects              | kubectl api-resources -o name                     |
+| List system pods                  | kubectl get pods -n kube-system                   |
+| Overview of an objectCluster info | kubectl cluster-info dump                         |
+| View the nodes in the cluster     | kubectl get nodes                                 |
+| Create serviceaccount             | kubectl create serviceaccount my-serviceaccount   |
 
 ## Creating a pod
 
@@ -64,6 +65,11 @@ K8s objects are building block of all running k8s application. [See understandin
 [See Secrets reference](https://kubernetes.io/docs/concepts/configuration/secret/)
 
 ## ServiceAccounts
+
+[See managing service accounts](https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/)
+[See configuring service accounts for pods](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/)
+
+
 
 # Multi-Container Pods
 
