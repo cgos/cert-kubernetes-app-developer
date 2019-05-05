@@ -74,6 +74,10 @@ K8s objects are building block of all running k8s application. [See understandin
 
 # Multi-Container Pods
 
+[See basic logging](https://kubernetes.io/docs/concepts/cluster-administration/logging/#using-a-sidecar-container-with-the-logging-agent)
+[See communication between container within the same pod](https://kubernetes.io/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/)
+[See discussion around three patterns: sidecar, ambassador and adapter](https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/)
+
 # Observability
 ## Liveness and Readiness Probes
 ## Container Logging

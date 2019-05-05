@@ -1,5 +1,9 @@
 alias k=kubectl
 
+TMUX
+ctrl-b %
+copy paste in tmux?
+
 # Setting up a cluster
 
 # First, set up the Docker and Kubernetes repositories:
