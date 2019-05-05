@@ -28,6 +28,7 @@ K8s objects are building block of all running k8s application. [See understandin
 | Get pods from namespace              | kubectl get pods -n my-ns                              |
 | Execute a command within a container | kubectl exec my-configmap-volume-pod -- ls /etc/config |
 | See logs from pod                    | kubectl logs my-configmap-pod                          |
+| Retrieve IP of a running pod         | kubectl get pod fruit-service -o=custom-columns=IP:.status.podIP --no-headers |
 
 ## Namespace
 

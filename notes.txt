@@ -1,6 +1,6 @@
 alias k=kubectl
 
-TMUX
+tmux
 ctrl-b %
 copy paste in tmux?
 
