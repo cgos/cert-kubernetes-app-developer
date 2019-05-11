@@ -149,6 +149,12 @@ If the pod is crashing, look at the logs or try executing a command in the pod.
 
 Kubernetes labels provide a way to attach custom, identifying information to your objects. Selectors can then be used to filter objects using label data as criteria. Annotations, on the other hand, offer a more freeform way to attach useful but non-identifying metadata. In this lesson, we will discuss labels, selectors, and annotations. We will also demonstrate how to use them in a cluster.<Paste>
 
+| Labels and selector                        | Command                                           |
+|--------------------------------------------|---------------------------------------------------|
+| List pods where env=prod and tier=frontend | kubectl get pods -l environment=production,tier=frontend|
+| List pods where env label is prod or qa    | kubectl get pods -l 'environment in (production, qa)'|
+| List pods where env label is not prod      | kubectl get pods -l 'environment notin (production)'|
+
 ## Deployments
 ## Rolling Updates and Rollbacks
 ## Jobs and CronJobs
