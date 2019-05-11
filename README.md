@@ -18,17 +18,20 @@ K8s objects are building block of all running k8s application. [See understandin
 
 [See pod overview](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/)
 
-| K8s Object                           | Command                                                |
+| Pods                                 | Command                                                |
 |--------------------------------------|--------------------------------------------------------|
 | Create pod                           | kubectl create -f my-pod.yml                           |
 | Create pod from image                | kubectl create deployment http --image=whateverimage   |
 | Edit a running pod                   | kubectl edit pod my-pod                                |
+| Check the state of a running pod     | kubectl describe pods my-pod                           |
 | Apply new config on pod              | kubectl apply -f my-pod.yml                            |
 | Delete pod                           | kubectl delete pod my-pod                              |
 | Get pods from namespace              | kubectl get pods -n my-ns                              |
 | Execute a command within a container | kubectl exec my-configmap-volume-pod -- ls /etc/config |
 | See logs from pod                    | kubectl logs my-configmap-pod                          |
 | Retrieve IP of a running pod         | kubectl get pod fruit-service -o=custom-columns=IP:.status.podIP --no-headers |
+| View resource usage from pods        | kubectl top pods                                       |
+| View resource usage from pods        | kubectl top pods -n my-namespace                       |
 
 ## Namespace
 
@@ -81,10 +84,28 @@ K8s objects are building block of all running k8s application. [See understandin
 
 # Observability
 ## Liveness and Readiness Probes
+
+[See pod lifecycle and container probes](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes)
+[See how to configure liveness and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)
+
 ## Container Logging
-## Installing Metrics Server
+
+[See the container logging architecture](https://kubernetes.io/docs/concepts/cluster-administration/logging/)
+Cluster-level logging requires a separate backend to store, analyze, and query logs.
+
 ## Monitoring Applications
+
+[See resource monitoring and usage](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/)
+
 ## Debugging
+How to find and fix broken pods
+
+[See debug pods and replicationControllers](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-pod-replication-controller/)
+[See debug service](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-service/)
+[See tools for monitoring resources](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/)
+
+If the ```kubectl describe pods my-pod``` shows the pod in Pending, it means there's probably insufficient resources preventing the pod to be scheduled onto a node
+
 
 # Pod Design
 ## Labels, Selectors and Annotations
