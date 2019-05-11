@@ -1,5 +1,12 @@
 Notes and snippets for the Certified Kubernetes Application Developer courses
 
+When using terminal in tmux
+alias k=kubectl
+
+tmux
+split window: ctrl-b %
+next window: ctrl-b n
+
 # Core Concepts
 
 ## Kubernetes primitives
@@ -22,7 +29,8 @@ K8s objects are building block of all running k8s application. [See understandin
 |--------------------------------------|--------------------------------------------------------|
 | Create pod                           | kubectl create -f my-pod.yml                           |
 | Create pod from image                | kubectl create deployment http --image=whateverimage   |
-| Edit a running pod                   | kubectl edit pod my-pod                                |
+| Edit a running pod                   | kubectl edit pod my-pod -n <namespace>                 |
+| See all running pod                  | kubectl get pods --all-namespaces                      |
 | Check the state of a running pod     | kubectl describe pods my-pod                           |
 | Apply new config on pod              | kubectl apply -f my-pod.yml                            |
 | Delete pod                           | kubectl delete pod my-pod                              |
@@ -32,6 +40,11 @@ K8s objects are building block of all running k8s application. [See understandin
 | Retrieve IP of a running pod         | kubectl get pod fruit-service -o=custom-columns=IP:.status.podIP --no-headers |
 | View resource usage from pods        | kubectl top pods                                       |
 | View resource usage from pods        | kubectl top pods -n my-namespace                       |
+
+To save and modify a the description of a running pod:
+```
+kubectl get pod <pod-name> -n <namespace> -o yaml --export > my-pod.yml
+```
 
 ## Namespace
 
@@ -110,13 +123,17 @@ How to find and fix broken pods
 [See tools for monitoring resources](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/)
 
 If the ```kubectl describe pods my-pod``` shows the pod in Pending, it means there's probably insufficient resources preventing the pod to be scheduled onto a node
-
-* Check node capacities ```kubectl get nodes -o json```
+* Check node capacities
+```
+kubectl get nodes -o json
+```
 
 If the pod is in Waiting state, probably there's a failure pulling the image.
 * Check image name is correct
 * Check the image is in the repo
 * Try a manual docker pull
+
+If the pod is crashing, look at the logs or try executing a command in the pod.
 
 # Pod Design
 ## Labels, Selectors and Annotations
