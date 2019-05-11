@@ -79,13 +79,16 @@ K8s objects are building block of all running k8s application. [See understandin
 # Multi-Container Pods
 
 [See basic logging](https://kubernetes.io/docs/concepts/cluster-administration/logging/#using-a-sidecar-container-with-the-logging-agent)
+
 [See communication between container within the same pod](https://kubernetes.io/docs/tasks/access-application-cluster/communicate-containers-same-pod-shared-volume/)
+
 [See discussion around three patterns: sidecar, ambassador and adapter](https://kubernetes.io/blog/2015/06/the-distributed-system-toolkit-patterns/)
 
 # Observability
 ## Liveness and Readiness Probes
 
 [See pod lifecycle and container probes](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes)
+
 [See how to configure liveness and readiness probes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/)
 
 ## Container Logging
@@ -101,11 +104,19 @@ Cluster-level logging requires a separate backend to store, analyze, and query l
 How to find and fix broken pods
 
 [See debug pods and replicationControllers](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-pod-replication-controller/)
+
 [See debug service](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-service/)
+
 [See tools for monitoring resources](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/)
 
 If the ```kubectl describe pods my-pod``` shows the pod in Pending, it means there's probably insufficient resources preventing the pod to be scheduled onto a node
 
+* Check node capacities ```kubectl get nodes -o json```
+
+If the pod is in Waiting state, probably there's a failure pulling the image.
+* Check image name is correct
+* Check the image is in the repo
+* Try a manual docker pull
 
 # Pod Design
 ## Labels, Selectors and Annotations
