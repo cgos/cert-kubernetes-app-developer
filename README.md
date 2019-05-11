@@ -107,6 +107,7 @@ kubectl get pod <pod-name> -n <namespace> -o yaml --export > my-pod.yml
 ## Container Logging
 
 [See the container logging architecture](https://kubernetes.io/docs/concepts/cluster-administration/logging/)
+
 Cluster-level logging requires a separate backend to store, analyze, and query logs.
 
 ## Monitoring Applications
@@ -122,7 +123,11 @@ How to find and fix broken pods
 
 [See tools for monitoring resources](https://kubernetes.io/docs/tasks/debug-application-cluster/resource-usage-monitoring/)
 
-If the ```kubectl describe pods my-pod``` shows the pod in Pending, it means there's probably insufficient resources preventing the pod to be scheduled onto a node
+If the
+```
+kubectl describe pods my-pod
+```
+shows the pod in Pending, it means there's probably insufficient resources preventing the pod to be scheduled onto a node
 * Check node capacities
 ```
 kubectl get nodes -o json
@@ -137,6 +142,13 @@ If the pod is crashing, look at the logs or try executing a command in the pod.
 
 # Pod Design
 ## Labels, Selectors and Annotations
+
+[See labels and selectors](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/)
+
+[See annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/)
+
+Kubernetes labels provide a way to attach custom, identifying information to your objects. Selectors can then be used to filter objects using label data as criteria. Annotations, on the other hand, offer a more freeform way to attach useful but non-identifying metadata. In this lesson, we will discuss labels, selectors, and annotations. We will also demonstrate how to use them in a cluster.<Paste>
+
 ## Deployments
 ## Rolling Updates and Rollbacks
 ## Jobs and CronJobs
