@@ -20,6 +20,9 @@ K8s objects are building block of all running k8s application. [See understandin
 | Overview of an objectCluster info | kubectl cluster-info dump                         |
 | View the nodes in the cluster     | kubectl get nodes                                 |
 | Create serviceaccount             | kubectl create serviceaccount my-serviceaccount   |
+| List Deployments                  | kubectl get deployments                           |
+| Edit Deployment                   | kubectl edit deployment.v1.apps/nginx-deployment  |
+| View Deployment ReplicaSet        | kubectl get rs                                    |
 
 ## Creating a pod
 
@@ -155,8 +158,22 @@ Kubernetes labels provide a way to attach custom, identifying information to you
 | List pods where env label is prod or qa    | kubectl get pods -l 'environment in (production, qa)'|
 | List pods where env label is not prod      | kubectl get pods -l 'environment notin (production)'|
 
+
+ In contrast to lables, annotations are not used to identify and select objects.
+
 ## Deployments
+
+[See deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+Deployment declares and manage a set of replica pods. A deployment defines a desired state for the pods for which the cluster will work to maintain that state.
+
 ## Rolling Updates and Rollbacks
+
+[See section on updating and rolling back a deployment](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/)
+You can edit a running Deployment
+```
+kubectl edit deployment.v1.apps/nginx-deployment
+```
+
 ## Jobs and CronJobs
 
 
