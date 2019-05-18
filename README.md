@@ -23,6 +23,7 @@ K8s objects are building block of all running k8s application. [See understandin
 | List Deployments                  | kubectl get deployments                           |
 | Edit Deployment                   | kubectl edit deployment.v1.apps/nginx-deployment  |
 | View Deployment ReplicaSet        | kubectl get rs                                    |
+| View Deployment ReplicaSet        | kubectl rollout history deployment/rolling-deployment |
 
 ## Creating a pod
 
