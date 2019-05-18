@@ -7,11 +7,7 @@ tmux
 split window: ctrl-b %
 next window: ctrl-b n
 
-# Core Concepts
-
-## Kubernetes primitives
-
-K8s objects are building block of all running k8s application. [See understanding kubernetes objects](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/)
+# kubectl cheat sheet
 
 | K8s Object                        | Command                                           |
 |-----------------------------------|---------------------------------------------------|
@@ -20,14 +16,15 @@ K8s objects are building block of all running k8s application. [See understandin
 | Overview of an objectCluster info | kubectl cluster-info dump                         |
 | View the nodes in the cluster     | kubectl get nodes                                 |
 | Create serviceaccount             | kubectl create serviceaccount my-serviceaccount   |
-| List Deployments                  | kubectl get deployments                           |
-| Edit Deployment                   | kubectl edit deployment.v1.apps/nginx-deployment  |
-| View Deployment ReplicaSet        | kubectl get rs                                    |
-| View Deployment ReplicaSet        | kubectl rollout history deployment/rolling-deployment |
 
-## Creating a pod
-
-[See pod overview](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/)
+| Deployment                        | Command                                                           |
+|-----------------------------------|-------------------------------------------------------------------|
+| List Deployments                  | kubectl get deployments                                           |
+| Edit Deployment                   | kubectl edit deployment.v1.apps/nginx-deployment                  |
+| View Deployment ReplicaSet        | kubectl get rs                                                    |
+| View Deployment ReplicaSet        | kubectl rollout history deployment/rolling-deployment             |
+| Rollback a Deployment             | kubectl rollout undo deployment/<deployment-name>                 |
+| Rollback a Deployment             | kubectl rollout undo deployment/<deployment-name> --to-revision=X |
 
 | Pods                                 | Command                                                |
 |--------------------------------------|--------------------------------------------------------|
@@ -44,6 +41,19 @@ K8s objects are building block of all running k8s application. [See understandin
 | Retrieve IP of a running pod         | kubectl get pod fruit-service -o=custom-columns=IP:.status.podIP --no-headers |
 | View resource usage from pods        | kubectl top pods                                       |
 | View resource usage from pods        | kubectl top pods -n my-namespace                       |
+
+
+# Core Concepts
+
+## Kubernetes primitives
+
+K8s objects are building block of all running k8s application. [See understanding kubernetes objects](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/)
+
+
+## Creating a pod
+
+[See pod overview](https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/)
+
 
 To save and modify a the description of a running pod:
 ```
