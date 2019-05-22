@@ -9,6 +9,7 @@ next window: ctrl-b n
 
 # kubectl cheat sheet
 
+Kubernetes objects
 | K8s Object                        | Command                                           |
 |-----------------------------------|---------------------------------------------------|
 | List all k8s objects              | kubectl api-resources -o name                     |
@@ -16,7 +17,9 @@ next window: ctrl-b n
 | Overview of an objectCluster info | kubectl cluster-info dump                         |
 | View the nodes in the cluster     | kubectl get nodes                                 |
 | Create serviceaccount             | kubectl create serviceaccount my-serviceaccount   |
+| Get Service                       | kubectl get svc                                   |
 
+Deployment object related command
 | Deployment                        | Command                                                           |
 |-----------------------------------|-------------------------------------------------------------------|
 | List Deployments                  | kubectl get deployments                                           |
@@ -26,6 +29,7 @@ next window: ctrl-b n
 | Rollback a Deployment             | kubectl rollout undo deployment/<deployment-name>                 |
 | Rollback a Deployment             | kubectl rollout undo deployment/<deployment-name> --to-revision=X |
 
+Pod object related command
 | Pods                                 | Command                                                |
 |--------------------------------------|--------------------------------------------------------|
 | Create pod                           | kubectl create -f my-pod.yml                           |
@@ -187,9 +191,24 @@ kubectl edit deployment.v1.apps/nginx-deployment
 
 ## Jobs and CronJobs
 
+[See Jon run to completion](https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/)
+[See CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)
+[See Running Automated Tasks with CronJob](https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/)
+
+To list all the pods that belong to a Job in a machine readable form:
+```
+pods=$(kubectl get pods --selector=job-name=pi --output=jsonpath='{.items[*].metadata.name}')
+echo $pods
+```
 
 # Services and Networking
 ## Services
+
+[See Services](https://kubernetes.io/docs/concepts/services-networking/service/)
+[See Using a Service to expose an app](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
+
+Deployment manages a set of replica set of pods.
+
 ## NetworkPolicies
 
 # State Persistence
