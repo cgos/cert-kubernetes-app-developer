@@ -10,6 +10,7 @@ next window: ctrl-b n
 # kubectl cheat sheet
 
 Kubernetes objects
+
 | K8s Object                        | Command                                           |
 |-----------------------------------|---------------------------------------------------|
 | List all k8s objects              | kubectl api-resources -o name                     |
@@ -20,6 +21,7 @@ Kubernetes objects
 | Get Service                       | kubectl get svc                                   |
 
 Deployment object related command
+
 | Deployment                        | Command                                                           |
 |-----------------------------------|-------------------------------------------------------------------|
 | List Deployments                  | kubectl get deployments                                           |
@@ -30,6 +32,7 @@ Deployment object related command
 | Rollback a Deployment             | kubectl rollout undo deployment/<deployment-name> --to-revision=X |
 
 Pod object related command
+
 | Pods                                 | Command                                                |
 |--------------------------------------|--------------------------------------------------------|
 | Create pod                           | kubectl create -f my-pod.yml                           |
