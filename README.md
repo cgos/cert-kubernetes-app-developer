@@ -210,7 +210,16 @@ echo $pods
 [See Services](https://kubernetes.io/docs/concepts/services-networking/service/)
 [See Using a Service to expose an app](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)
 
+
 Deployment manages a set of replica set of pods.
+
+A Kubernetes Service is an abstraction which defines a logical set of Pods and a policy by which to access them - sometimes called a micro-service
+
+There are 4 types of Service:
+* ClusterIP
+* NodePort
+* LoadBalancer
+* ExternalName
 
 ## NetworkPolicies
 
