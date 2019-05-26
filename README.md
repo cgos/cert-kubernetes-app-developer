@@ -19,6 +19,7 @@ Kubernetes objects
 | View the nodes in the cluster     | kubectl get nodes                                 |
 | Create serviceaccount             | kubectl create serviceaccount my-serviceaccount   |
 | Get Service                       | kubectl get svc                                   |
+| Get Endpoint                      | kubectl get ep                                    |
 
 Deployment object related command
 
@@ -216,12 +217,16 @@ Deployment manages a set of replica set of pods.
 A Kubernetes Service is an abstraction which defines a logical set of Pods and a policy by which to access them - sometimes called a micro-service
 
 There are 4 types of Service:
-* ClusterIP
-* NodePort
+* ClusterIP: exposed within the cluster
+* NodePort:  exposed outside the cluster
 * LoadBalancer
-* ExternalName
+* ExternalName: expose a service to a resource outside the cluster
 
 ## NetworkPolicies
+
+[See Network Policies](https://kubernetes.io/docs/concepts/services-networking/network-policies/)
+
+Control outbound and inbound traffic to pods
 
 # State Persistence
 ## Volumes
