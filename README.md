@@ -9,7 +9,7 @@ next window: ctrl-b n
 
 # kubectl cheat sheet
 
-Kubernetes objects
+## Kubernetes objects
 
 | K8s Object                        | Command                                           |
 |-----------------------------------|---------------------------------------------------|
@@ -21,7 +21,7 @@ Kubernetes objects
 | Get Service                       | kubectl get svc                                   |
 | Get Endpoint                      | kubectl get ep                                    |
 
-Deployment object related command
+## Deployment object related command
 
 | Deployment                        | Command                                                           |
 |-----------------------------------|-------------------------------------------------------------------|
@@ -32,7 +32,7 @@ Deployment object related command
 | Rollback a Deployment             | kubectl rollout undo deployment/<deployment-name>                 |
 | Rollback a Deployment             | kubectl rollout undo deployment/<deployment-name> --to-revision=X |
 
-Pod object related command
+## Pod object related command
 
 | Pods                                 | Command                                                |
 |--------------------------------------|--------------------------------------------------------|
@@ -230,6 +230,9 @@ Control outbound and inbound traffic to pods
 
 # State Persistence
 ## Volumes
+
+[See Volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
+
 ## PersistenceVolumes and PersistentVolumeClaims
 
 # Practice Exam
