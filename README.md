@@ -20,6 +20,7 @@ next window: ctrl-b n
 | Create serviceaccount             | kubectl create serviceaccount my-serviceaccount   |
 | Get Service                       | kubectl get svc                                   |
 | Get Endpoint                      | kubectl get ep                                    |
+| Get PersistentVolume              | kubectl get pv                                    |
 
 ## Deployment object related command
 
@@ -234,6 +235,9 @@ Control outbound and inbound traffic to pods
 [See Volumes](https://kubernetes.io/docs/concepts/storage/volumes/)
 
 ## PersistenceVolumes and PersistentVolumeClaims
+
+[See Persisten Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
+[See Configure Pod to use PersistentVolume](https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/)
 
 # Practice Exam
 
