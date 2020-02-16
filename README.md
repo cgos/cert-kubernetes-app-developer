@@ -21,6 +21,9 @@ next window: ctrl-b n
 | Get Service                       | kubectl get svc                                   |
 | Get Endpoint                      | kubectl get ep                                    |
 | Get PersistentVolume              | kubectl get pv                                    |
+| Create context                    | kubectl config set-context my-ctx --namespace=myns|
+| Use context                       | kubectl config use-context my-ctx                 |
+| Extract specific field            | kubectl get pods my-pod -o jsonpath --template={.status.podIP}|
 
 ## Deployment object related command
 
@@ -46,6 +49,7 @@ next window: ctrl-b n
 | Delete pod                           | kubectl delete pod my-pod                              |
 | Get pods from namespace              | kubectl get pods -n my-ns                              |
 | Execute a command within a container | kubectl exec my-configmap-volume-pod -- ls /etc/config |
+| Execute a command within a container | kubectl exec -it <pod-name> -- bash                    |
 | See logs from pod                    | kubectl logs my-configmap-pod                          |
 | Retrieve IP of a running pod         | kubectl get pod fruit-service -o=custom-columns=IP:.status.podIP --no-headers |
 | View resource usage from pods        | kubectl top pods                                       |
